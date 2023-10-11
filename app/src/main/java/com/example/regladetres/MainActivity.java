@@ -6,13 +6,16 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    //  Vistas
     private TextInputLayout tilNum1;
     private TextInputLayout tilNum3;
     private TextInputLayout tilNum2;
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvResultado;
 
     private Button btnCalcular;
+
+    //  Variables
+    private double resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +57,33 @@ public class MainActivity extends AppCompatActivity {
     } //close oncreate
 
     private void calcular() {
-        double num1 = Double.parseDouble(String.valueOf(tieNum1.getText()));
-        double num2 = Double.parseDouble(String.valueOf(tieNum2.getText()));
-        double num3 = Double.parseDouble(String.valueOf(tieNum3.getText()));
 
-        double resultado = (num3 * num2) / num1;
+
+        if (isEmpty(tieNum1) || isEmpty(tieNum2) || isEmpty(tieNum3)) {
+            Toast.makeText(this, "No debe dejar ningún campo vacío."
+                    , Toast.LENGTH_SHORT).show();
+        } else {
+
+            double num1 = Double.parseDouble(String.valueOf(tieNum1.getText()));
+            double num2 = Double.parseDouble(String.valueOf(tieNum2.getText()));
+            double num3 = Double.parseDouble(String.valueOf(tieNum3.getText()));
+
+            if (num1 == 0 && num3 == 0) {
+                Toast.makeText(this, "División incorrecta. No se puede dividir 0 entre 0."
+                        , Toast.LENGTH_SHORT).show();
+                //return;
+            } else if (num1 == 0) {
+                Toast.makeText(this, "No se puede dividir entre 0."
+                        , Toast.LENGTH_SHORT).show();
+                // return;
+            }
+            resultado = (num3 * num2) / num1;
+        }
 
         tvResultado.setText("El valor de X es: " + resultado);
+    } //close method
+
+    private boolean isEmpty(final EditText myeditText) {
+        return myeditText.getText().toString().trim().length() == 0;
     } //close method
 } //close class
