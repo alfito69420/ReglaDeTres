@@ -89,8 +89,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#4fda3f"
         android:text="Calcular"
         app:layout_constraintTop_toBottomOf="@id/til_num_3" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#DA0303"
+        android:text="Reset"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcular" />
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Subtitle1"
@@ -102,5 +112,5 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_calcular" />
+        app:layout_constraintTop_toBottomOf="@id/btn_reset" />
 </androidx.constraintlayout.widget.ConstraintLayout>
