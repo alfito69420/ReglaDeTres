@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             resultado = (num3 * num2) / num1;
         }
 
-        tvResultado.setText("El valor de X es: " + resultado);
+        tvResultado.setText("El valor de X es: \n" + resultado);
     } //close method
 
     private boolean isEmpty(final EditText myeditText) {

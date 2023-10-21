@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -21,6 +22,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_num_1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,11 +34,13 @@
             android:id="@+id/tie_num1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_num_2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -48,11 +52,13 @@
             android:id="@+id/tie_num2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_num_3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -64,11 +70,13 @@
             android:id="@+id/tie_num3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_num_4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -81,36 +89,46 @@
             android:id="@+id/tie_num4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_calcular"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="#4fda3f"
         android:text="Calcular"
-        app:layout_constraintTop_toBottomOf="@id/til_num_3" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btn_reset" />
 
     <Button
         android:id="@+id/btn_reset"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#DA0303"
         android:text="Reset"
-        app:layout_constraintTop_toBottomOf="@id/btn_calcular" />
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:id="@+id/tv_resultado"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="128dp"
+        android:maxLines="2"
         android:text="El valor de X es: "
         android:textAlignment="center"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_reset" />
+        app:layout_constraintTop_toBottomOf="@id/til_num_3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
