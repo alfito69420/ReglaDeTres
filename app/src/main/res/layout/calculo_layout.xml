@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="16dp"
+    android:background="@color/light_color_background"
     android:paddingTop="64dp"
     android:paddingEnd="16dp"
     android:paddingBottom="16dp">
@@ -60,11 +61,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_calcular"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="#4fda3f"
         android:text="Calcular"
         android:textColor="@color/white"
         app:cornerRadius="23dp"
@@ -72,11 +71,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_reset"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#DA0303"
+        android:backgroundTint="@color/light_color_error"
         android:text="Reset"
         android:textColor="@color/white"
         app:cornerRadius="23dp"
